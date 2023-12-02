@@ -23,10 +23,11 @@ public class ReindeerRenderer extends MobRenderer<ReindeerEntity, ReindeerModel<
     @Override
     public ResourceLocation getTextureLocation (ReindeerEntity entity)
     {
-        if (entity.level().getBiome(entity.getOnPos()).is(Biomes.SNOWY_TAIGA) ||
+        if ((entity.level().getBiome(entity.getOnPos()).is(Biomes.SNOWY_TAIGA) ||
                 entity.level().getBiome(entity.getOnPos()).is(Biomes.SNOWY_BEACH) ||
                 entity.level().getBiome(entity.getOnPos()).is(Biomes.SNOWY_PLAINS) ||
-                entity.level().getBiome(entity.getOnPos()).is(Biomes.SNOWY_SLOPES)) return SNOW;
+                entity.level().getBiome(entity.getOnPos()).is(Biomes.SNOWY_SLOPES)) &&
+                entity.level().isRainingAt(entity.getOnPos())) return SNOW;
         return NORMAL;
     }
 }

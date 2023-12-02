@@ -17,14 +17,19 @@ import net.minecraftforge.common.ForgeMod;
 import org.jetbrains.annotations.Nullable;
 import superscary.reindeer.init.EntityInit;
 
+import java.util.Random;
+
 public class ReindeerEntity extends Animal
 {
 
     public final AnimationState idleAnimationState = new AnimationState();
 
+    public boolean shouldPoop;
+
     public ReindeerEntity (EntityType<ReindeerEntity> type, Level level)
     {
         super(type, level);
+        this.shouldPoop = false;
     }
 
     public ReindeerEntity (Level level, double x, double y, double z)
@@ -66,6 +71,17 @@ public class ReindeerEntity extends Animal
             this.idleAnimationState.animateWhen(!isInWaterOrBubble() && !this.walkAnimation.isMoving(), tickCount);
         }
 
+        if (tickCount % 12000 == 0)
+        {
+            Random random1 = new Random();
+            int i = random1.nextInt(10);
+            if (i == 5)
+            {
+                shouldPoop = true;
+                //level().
+            }
+        }
+
         super.tick();
     }
 
@@ -80,6 +96,11 @@ public class ReindeerEntity extends Animal
     public static boolean canSpawn (EntityType<ReindeerEntity> type, LevelAccessor level, MobSpawnType spawnType, BlockPos position, RandomSource source)
     {
         return Animal.checkAnimalSpawnRules(type, level, spawnType, position, source);
+    }
+
+    public boolean getShouldPoop ()
+    {
+        return shouldPoop;
     }
 
 }

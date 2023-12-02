@@ -27,6 +27,7 @@ public class ModdedCreativeTabs
                        output.accept(ItemInit.RAW_VEAL.get());
                        output.accept(ItemInit.VEAL.get());
                        output.accept(ItemInit.ANTLER.get());
+                       output.accept(ItemInit.REINDEER_DROPPINGS.get());
                    }).build());
 
    public static void register (IEventBus eventBus)

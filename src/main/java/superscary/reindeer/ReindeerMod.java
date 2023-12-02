@@ -58,6 +58,7 @@ public class ReindeerMod
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS)
         {
             event.accept(ItemInit.ANTLER);
+            event.accept(ItemInit.REINDEER_DROPPINGS);
         }
 
     }

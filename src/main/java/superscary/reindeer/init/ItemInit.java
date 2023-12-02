@@ -25,4 +25,7 @@ public class ItemInit
     public static final RegistryObject<Item> ANTLER = ITEMS.register("antler",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> REINDEER_DROPPINGS = ITEMS.register("reindeer_droppings",
+            () -> new Item(new Item.Properties()));
+
 }
