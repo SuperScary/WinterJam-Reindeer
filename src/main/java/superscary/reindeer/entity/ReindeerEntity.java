@@ -9,6 +9,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
@@ -16,6 +17,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraftforge.common.ForgeMod;
 import org.jetbrains.annotations.Nullable;
 import superscary.reindeer.init.EntityInit;
+import superscary.reindeer.init.ItemInit;
 
 import java.util.Random;
 
@@ -73,14 +75,10 @@ public class ReindeerEntity extends Animal
 
         if (tickCount % 12000 == 0)
         {
-            Random random1 = new Random();
-            int i = random1.nextInt(10);
-            if (i == 5)
-            {
-                shouldPoop = true;
-                //level().
-            }
+            shouldPoop = true;
+            this.spawnAtLocation(new ItemStack(ItemInit.REINDEER_DROPPINGS.get(), 1));
         }
+        shouldPoop = false;
 
         super.tick();
     }
