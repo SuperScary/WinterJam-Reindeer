@@ -5,5 +5,9 @@
   "item.reindeer.raw_veal": "Raw Veal",
   "item.reindeer.veal": "Veal",
   "item.reindeer.antler": "Antler",
-  "item.reindeer.reindeer_droppings": "Reindeer Droppings"
+  "item.reindeer.reindeer_droppings": "Reindeer Droppings",
+
+  "sounds.reindeer.reindeer_idle": "Reindeer Idle",
+  "sounds.reindeer.reindeer_hurt": "Reindeer distress bawl",
+  "sounds.reindeer.reindeer_death": "Reindeer Death"
 }

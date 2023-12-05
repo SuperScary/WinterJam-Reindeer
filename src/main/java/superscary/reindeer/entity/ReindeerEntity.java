@@ -2,7 +2,10 @@ package superscary.reindeer.entity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -18,6 +21,7 @@ import net.minecraftforge.common.ForgeMod;
 import org.jetbrains.annotations.Nullable;
 import superscary.reindeer.init.EntityInit;
 import superscary.reindeer.init.ItemInit;
+import superscary.reindeer.sound.ModSounds;
 
 import java.util.Random;
 
@@ -81,6 +85,32 @@ public class ReindeerEntity extends Animal
         shouldPoop = false;
 
         super.tick();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getAmbientSound ()
+    {
+        Random random1 = new Random();
+        int sound = random1.nextInt(3);
+        if (sound == 0) return ModSounds.REINDEER_IDLE1.get();
+        else if (sound == 1) return ModSounds.REINDEER_IDLE2.get();
+        else if (sound == 2) return ModSounds.REINDEER_IDLE3.get();
+        else return super.getAmbientSound();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getDeathSound ()
+    {
+        return ModSounds.REINDEER_DEATH.get();
+    }
+
+    @Nullable
+    @Override
+    protected SoundEvent getHurtSound (DamageSource damageSource)
+    {
+        return ModSounds.REINDEER_HURT.get();
     }
 
     public static AttributeSupplier.Builder createAttributes ()

@@ -1,0 +1,32 @@
+{
+  "reindeer_idle1": {
+    "subtitle": "sounds.reindeer.reindeer_idle",
+    "sounds": [
+      "reindeer:reindeer_idle1"
+    ]
+  },
+  "reindeer_idle2": {
+    "subtitle": "sounds.reindeer.reindeer_idle",
+    "sounds": [
+      "reindeer:reindeer_idle2"
+    ]
+  },
+  "reindeer_idle3": {
+    "subtitle": "sounds.reindeer.reindeer_idle",
+    "sounds": [
+      "reindeer:reindeer_idle3"
+    ]
+  },
+  "reindeer_hurt": {
+    "subtitle": "sounds.reindeer.hurt",
+    "sounds": [
+      "reindeer:reindeer_hurt"
+    ]
+  },
+  "reindeer_death": {
+    "subtitle": "sounds.reindeer.death",
+    "sounds": [
+      "reindeer:reindeer_death"
+    ]
+  }
+}

@@ -13,6 +13,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import superscary.reindeer.init.EntityInit;
 import superscary.reindeer.init.ItemInit;
+import superscary.reindeer.sound.ModSounds;
 
 @Mod(ReindeerMod.MODID)
 public class ReindeerMod
@@ -30,6 +31,7 @@ public class ReindeerMod
 
         ItemInit.ITEMS.register(modEventBus);
         EntityInit.ENTITIES.register(modEventBus);
+        ModSounds.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
